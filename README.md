@@ -193,7 +193,7 @@ Sample data used in JSON format
     "position": "Accountant",
     "score": 68,
     "status": "rejected"
-  },
+  },<br>
   {
     "applicantId": 105,
     "name": "Amina Yusuf",
@@ -201,7 +201,7 @@ Sample data used in JSON format
     "position": "ICT Officer",
     "score": 88,
     "status": "shortlisted"
-  },
+  },<br>
   {
     "applicantId": 106,
     "name": "John Kimani",
@@ -209,7 +209,7 @@ Sample data used in JSON format
     "position": "Security Officer",
     "score": 72,
     "status": "pending"
-  },
+  },<br>
   {
     "applicantId": 107,
     "name": "Susan Nyambura",
@@ -217,7 +217,7 @@ Sample data used in JSON format
     "position": "Secretary",
     "score": 85,
     "status": "shortlisted"
-  },
+  },<br>
   {
     "applicantId": 108,
     "name": "Kevin Onyango",
@@ -225,7 +225,7 @@ Sample data used in JSON format
     "position": "Driver",
     "score": 65,
     "status": "pending"
-  },
+  },<br>
   {
     "applicantId": 109,
     "name": "Lucy Njeri",
@@ -233,7 +233,7 @@ Sample data used in JSON format
     "position": "Accountant",
     "score": 91,
     "status": "shortlisted"
-  },
+  },<br>
   {
     "applicantId": 110,
     "name": "Brian Kiptoo",
@@ -241,13 +241,13 @@ Sample data used in JSON format
     "position": "ICT Officer",
     "score": 79,
     "status": "pending"
-  }
-]
-QUESTION 3: APPLIED SCENARIO
+  }<br>
+]<br><br>
+QUESTION 3: APPLIED SCENARIO<br>
 Public Service Commission normally collects thousands of applicants records for the purposes of recruiting persons to serve in the public organizations. A portal is used to collect this data. Applicants’ profiles are normally varied in a way depending on the job descriptions. The profiles are build based on: personal information, qualifications, work experiences, jobs applied, status of the applications among others. 
-MongoDB can be applied in this scenario because of the variance of applicants’ data; it can allow for nesting information when building applicants profile thus allowing the applicants profiles to be stored as self-contained documents. It makes it easy to add new fields like interview dates or remarks without changing the schema. The Document format maps well with the PSC web portal thus also contributing to improvement in responsiveness during high traffic times.
-MongoDB database can be used to model this problem by storing each applicant as a document in the applicants collection as shown below: -
-{
+MongoDB can be applied in this scenario because of the variance of applicants’ data; it can allow for nesting information when building applicants profile thus allowing the applicants profiles to be stored as self-contained documents. It makes it easy to add new fields like interview dates or remarks without changing the schema. The Document format maps well with the PSC web portal thus also contributing to improvement in responsiveness during high traffic times.<br>
+MongoDB database can be used to model this problem by storing each applicant as a document in the applicants collection as shown below: -<br>
+{<br>
   "applicantId": 103,
   "name": "Mary Atieno",
   "gender": "Female",
@@ -258,43 +258,43 @@ MongoDB database can be used to model this problem by storing each applicant as 
   "contact": {
     "email": "mary.atieno@example.com",
     "phone": "0712345678"
-  },
-  "workExperience": [
+  },<br>
+  "workExperience": [<br>
     { "company": "KRA", "years": 2 },
-    { "company": "County Office", "years": 1 }
-  ]
-}
+    { "company": "County Office", "years": 1 }<br>
+  ]<br>
+}<br>
 This document format allows for the storage of nested and optional data therefore, eliminating the need for complex joins or rigid table structure 
-
+<br>
 Queries can be used to solve the issue of data retrieval as shown below: -
-a.	to shortlist all applicants with minimum score of 80%, use
-db.applicants.updateMany(
+a.	to shortlist all applicants with minimum score of 80%, use<br>
+db.applicants.updateMany(<br>
   { score: { $gte: 80 } },
   { $set: { status: "shortlisted" } }
-)
-b.	to filter by gender and disability use
-db.applicants.find({
+)<br>
+b.	to filter by gender and disability use<br>
+db.applicants.find({<br>
   gender: "Female",
   disabilityStatus: { $ne: "none" }
-})
+})<br>
 
-Group Contribution Summary
-Name: Samuel Shadiva Tokoye
-Student ID: 222072
-Responsibilities:
-•	MongoDB setup
-•	Scenario design
+Group Contribution Summary<br><br>
+Name: Samuel Shadiva Tokoye<br>
+Student ID: 222072<br>
+Responsibilities:<br>
+•	MongoDB setup<br>
+•	Scenario design<br><br>
 
 
-Name: Elizabeth [COMPLETE THE NAME]
-Student ID: [INSERT_STUDENT_ID]
-Responsibilities:
-•	CRUD implementation
-•	Screenshots and visuals
+Name: Elizabeth [COMPLETE THE NAME]<br>
+Student ID: [INSERT_STUDENT_ID]<br>
+Responsibilities:<br>
+•	CRUD implementation<br>
+•	Screenshots and visuals<br>
 
-Name: Catherine [COMPLETE THE NAME]
-Student ID: [INSERT_STUDENT_ID]
-Responsibilities:
+Name: Catherine [COMPLETE THE NAME]<br>
+Student ID: [INSERT_STUDENT_ID]<br>
+Responsibilities:<br>
 •	Markdown lab documentation
 
 
