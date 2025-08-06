@@ -252,8 +252,8 @@ Sample data used in JSON format
   }<br>
 ]<br><br>
 QUESTION 3: APPLIED SCENARIO<br>
-Public Service Commission normally collects thousands of applicants records for the purposes of recruiting persons to serve in the public organizations. A portal is used to collect this data. Applicants’ profiles are normally varied in a way depending on the job descriptions. The profiles are build based on: personal information,academic qualifications, professional qualifications, work experiences, membership to professional bodies,jobs applied, status of the applications among others.<br> 
-how the database can be used to model this problem.
+Public Service Commission normally collects thousands of applicants records for the purposes of recruiting persons to serve in the public organizations. A portal is used to collect this data. Applicants’ profiles are normally varied in a way depending on the job descriptions. The profiles are build based on: personal information,academic qualifications, professional qualifications, work experiences, membership to professional bodies,jobs applied, status of the applications among others.<br> <br>
+how the database can be used to model this problem. <br>
 MongoDB’s document model can allow for clean and nested representation of this data within a single applicant record without normalization. <br>
 For instance, the sample applicant data below demonstrates how the MongoDB database can model this problem. We can have applicants with different profiles, for instance applicant 103 and applicant 112 have totally different profiles, their additional data are nested under their profiles and more data like interview dates can also be added<br>
 applicant 103
