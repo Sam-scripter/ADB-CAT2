@@ -75,17 +75,17 @@ Sample Output
 b.	insert many records(add many documents to applicants collection)
 
 db.applicants.insertMany([
-  { applicantId: 101, name: "Grace Wanjiku", gender: "Female", position: "ICT Officer", score: 82, status: "pending" },
-  { applicantId: 102, name: "James Otieno", gender: "Male", position: "Clerk", score: 75, status: "pending" },
-  { applicantId: 103, name: "Mary Atieno", gender: "Female", position: "Clerk", score: 90, status: "pending" },
-  { applicantId: 104, name: "Peter Mwangi", gender: "Male", position: "Accountant", score: 68, status: "rejected" },
-  { applicantId: 105, name: "Amina Yusuf", gender: "Female", position: "ICT Officer", score: 88, status: "shortlisted" },
-  { applicantId: 106, name: "John Kimani", gender: "Male", position: "Security Officer", score: 72, status: "pending" },
-  { applicantId: 107, name: "Susan Nyambura", gender: "Female", position: "Secretary", score: 85, status: "shortlisted" },
-  { applicantId: 108, name: "Kevin Onyango", gender: "Male", position: "Driver", score: 65, status: "pending" },
-  { applicantId: 109, name: "Lucy Njeri", gender: "Female", position: "Accountant", score: 91, status: "shortlisted" },
-  { applicantId: 110, name: "Brian Kiptoo", gender: "Male", position: "ICT Officer", score: 79, status: "pending" }
-])
+  { applicantId: 101, name: "Grace Wanjiku", gender: "Female", position: "ICT Officer", score: 82, status: "pending" },<br>
+  { applicantId: 102, name: "James Otieno", gender: "Male", position: "Clerk", score: 75, status: "pending" },<br>
+  { applicantId: 103, name: "Mary Atieno", gender: "Female", position: "Clerk", score: 90, status: "pending" },<br>
+  { applicantId: 104, name: "Peter Mwangi", gender: "Male", position: "Accountant", score: 68, status: "rejected" },<br>
+  { applicantId: 105, name: "Amina Yusuf", gender: "Female", position: "ICT Officer", score: 88, status: "shortlisted" },<br>
+  { applicantId: 106, name: "John Kimani", gender: "Male", position: "Security Officer", score: 72, status: "pending" },<br>
+  { applicantId: 107, name: "Susan Nyambura", gender: "Female", position: "Secretary", score: 85, status: "shortlisted" },<br>
+  { applicantId: 108, name: "Kevin Onyango", gender: "Male", position: "Driver", score: 65, status: "pending" },<br>
+  { applicantId: 109, name: "Lucy Njeri", gender: "Female", position: "Accountant", score: 91, status: "shortlisted" },<br>
+  { applicantId: 110, name: "Brian Kiptoo", gender: "Male", position: "ICT Officer", score: 79, status: "pending" }<br>
+])<br>
 
 
 Output
@@ -161,7 +161,7 @@ output is as follows
 
 Sample data used in JSON format
 
-[
+[<br>
   {
     "applicantId": 101,
     "name": "Grace Wanjiku",
@@ -169,7 +169,7 @@ Sample data used in JSON format
     "position": "ICT Officer",
     "score": 82,
     "status": "pending"
-  },
+  },<br>
   {
     "applicantId": 102,
     "name": "James Otieno",
@@ -177,7 +177,7 @@ Sample data used in JSON format
     "position": "Clerk",
     "score": 75,
     "status": "pending"
-  },
+  },<br>
   {
     "applicantId": 103,
     "name": "Mary Atieno",
@@ -185,7 +185,7 @@ Sample data used in JSON format
     "position": "Clerk",
     "score": 90,
     "status": "pending"
-  },
+  },<br>
   {
     "applicantId": 104,
     "name": "Peter Mwangi",
