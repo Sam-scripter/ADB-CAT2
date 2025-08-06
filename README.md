@@ -20,9 +20,16 @@ Installing steps
  ![screenshot](Lab_screenshot_3.png)
 
 Service Configuration
-gggggggggggggggggggggg
- 
+![screenshot](Lab_screenshot_15.png)
 
+Install MongoDB Compass
+![screenshot](Lab_screenshot_16.png)
+
+Install Mongo Server
+![screenshot](Lab_screenshot_17.png)
+
+Installation Process
+![screenshot](Lab_screenshot_18.png)
 
 Launch MongoDB compass, select add new connection
 
