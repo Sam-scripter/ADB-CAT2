@@ -252,9 +252,13 @@ Sample data used in JSON format
   }<br>
 ]<br><br>
 QUESTION 3: APPLIED SCENARIO<br>
-Public Service Commission normally collects thousands of applicants records for the purposes of recruiting persons to serve in the public organizations. A portal is used to collect this data. Applicants’ profiles are normally varied in a way depending on the job descriptions. The profiles are build based on: personal information, qualifications, work experiences, jobs applied, status of the applications among others. 
-MongoDB can be applied in this scenario because of the variance of applicants’ data; it can allow for nesting information when building applicants profile thus allowing the applicants profiles to be stored as self-contained documents. It makes it easy to add new fields like interview dates or remarks without changing the schema. The Document format maps well with the PSC web portal thus also contributing to improvement in responsiveness during high traffic times.<br>
-MongoDB database can be used to model this problem by storing each applicant as a document in the applicants collection as shown below: -<br>
+Public Service Commission normally collects thousands of applicants records for the purposes of recruiting persons to serve in the public organizations. A portal is used to collect this data. Applicants’ profiles are normally varied in a way depending on the job descriptions. The profiles are build based on: personal information,academic qualifications, professional qualifications, work experiences, membership to professional bodies,jobs applied, status of the applications among others.<br> 
+how the database can be used to model this problem.
+MongoDB’s document model can allow for clean and nested representation of this data within a single applicant record without normalization. <br>
+For instance, the sample applicant data below demonstrates how the MongoDB database can model this problem. We can have applicants with different profiles, for instance applicant 103 and applicant 112 have totally different profiles, their additional data are nested under their profiles and more data like interview dates can also be added<br>
+applicant 103
+
+<br>
 {<br>
   "applicantId": 103,
   "name": "Mary Atieno",
@@ -271,20 +275,52 @@ MongoDB database can be used to model this problem by storing each applicant as 
     { "company": "KRA", "years": 2 },
     { "company": "County Office", "years": 1 }<br>
   ]<br>
+  
+  
+applicant 112<br>
+
+{<br>
+  "applicantId": 112,
+  "name": "Josephine Naliaka",
+  "gender": "Female",
+  "position": "ICT Officer",
+  "score": 86,
+  "status": "pending",
+  "academicQualifications": [
+    {
+      "level": "Diploma",
+      "field": "Information Technology",
+      "institution": "Technical University of Kenya",
+      "year": 2018
+    },<br>
+    {
+      "level": "Degree",
+      "field": "Computer Science",
+      "institution": "Jomo Kenyatta University of Agriculture and Technology",
+      "year": 2021
+    }
+  ],<br>
+  "professionalCertifications": [
+    {
+      "name": "CCNA",
+      "institution": "Cisco",
+      "year": 2022
+    },
+    {
+      "name": "CISM",
+      "institution": "ISACA",
+      "year": 2023
+    }
+  ],<br>
+  "professionalMemberships": [
+    {
+      "organization": "ISACA",
+      "membershipNumber": "IS567890",
+      "since": 2023
+    }
+  ]
 }<br>
-This document format allows for the storage of nested and optional data therefore, eliminating the need for complex joins or rigid table structure 
-<br>
-Queries can be used to solve the issue of data retrieval as shown below: -
-a.	to shortlist all applicants with minimum score of 80%, use<br>
-db.applicants.updateMany(<br>
-  { score: { $gte: 80 } },
-  { $set: { status: "shortlisted" } }
-)<br>
-b.	to filter by gender and disability use<br>
-db.applicants.find({<br>
-  gender: "Female",
-  disabilityStatus: { $ne: "none" }
-})<br>
+
 
 GROUP CONTRIBUTION SUMMARY:<br>
 Name: Samuel Shadiva Tokoye<br>
@@ -294,8 +330,8 @@ Responsibilities:<br>
 •	Scenario design<br><br>
 
 
-Name: Elizabeth [COMPLETE THE NAME]<br>
-Student ID: [INSERT_STUDENT_ID]<br>
+Name: Elizabeth Sikuku<br>
+Student ID: 096039<br>
 Responsibilities:<br>
 •	CRUD implementation<br>
 •	Screenshots and visuals<br>
