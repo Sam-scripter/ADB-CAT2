@@ -278,7 +278,7 @@ db.applicants.find({<br>
   disabilityStatus: { $ne: "none" }
 })<br>
 
-Group Contribution Summary<br><br>
+GROUP CONTRIBUTION SUMMARY:<br>
 Name: Samuel Shadiva Tokoye<br>
 Student ID: 222072<br>
 Responsibilities:<br>
