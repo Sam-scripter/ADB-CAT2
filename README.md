@@ -9,13 +9,15 @@ Download from this link: Install MongoDB Community Kubernetes Operator | MongoDB
 Installing steps
 -	Double click the installer to initiate the installation process
 
- 
+ ![screenshot](Lab_screenshot_1.jpg)
 
 -	Click next and accept the terms of agreement
- 
+
+ ![screenshot](Lab_screenshot_2.png)
 
 -	Click Next and then select Complete to install the complete package
- 
+
+ ![screenshot](Lab_screenshot_3.png)
 
 Screenshots
  Missed – install as a service, install compass, finish
@@ -23,7 +25,7 @@ Screenshots
 
 Launch MongoDB compass, select add new connection
 
- 
+ ![screenshot](Lab_screenshot_4.png)
 
 Specify the following parameters in the window that appears
 Uri: mongodb://localhost:27017
@@ -52,7 +54,7 @@ use recruitmentDB
 
 expected output
  
- 
+ ![screenshot](Lab_screenshot_5.png)
 
 2. CREATE: add sample documents to our recruitment database
 
@@ -67,7 +69,8 @@ db.applicants.insertOne({
 })
 
 Sample Output
- 
+
+ ![screenshot](Lab_screenshot_6.png)
 
 b.	insert many records(add many documents to applicants collection)
 
@@ -87,6 +90,7 @@ db.applicants.insertMany([
 
 Output
  
+ ![screenshot](Lab_screenshot_7.png)
 
 
 2. READ: Query applicants
@@ -96,18 +100,20 @@ a. To retrieve all applicants use the following command
 This returns all the 11 records inserted
 Sample output
 
+![screenshot](Lab_screenshot_8.png)
  
 
 b. use the following command to get all applicants who applied for the Clerk position
      db.applicants.find({ position: "Clerk" })
 
 sample output
- 
+
+ ![screenshot](Lab_screenshot_9.png)
 
 c. To get all applicants with scores above 90, use the following command
      db.applicants.find({ score: { $gte: 90 } })
     Sample output
- 
+   ![screenshot](Lab_screenshot_10.png)
 
 3. UPDATE: Modify Applicants Records
 a. to shortlist applicant with a score of more than 80 use the following command
@@ -116,15 +122,9 @@ db.applicants.updateMany(
   { $set: { status: "shortlisted" } }
 )
 
-
-
-
-
-
-
-
-
 Output is as follows
+
+![screenshot](Lab_screenshot_11.png)
  
 b. to update applicant name by ID use the following command
 db.applicants.updateOne(
@@ -132,13 +132,14 @@ db.applicants.updateOne(
   { $set: { name: "James O. Otieno" } }
 )
 Output is as follows
- 
 
-
+ ![screenshot](Lab_screenshot_12.png)
 
 4. DELETE:- remove applicant records
 
 a.	Delete an applicant   by id
+
+![screenshot](Lab_screenshot_13.png)
 
 Command:
 
@@ -156,9 +157,7 @@ db.applicants.deleteMany({ status: "rejected" })
 
 output is as follows
 
- 
-
-
+ ![screenshot](Lab_screenshot_14.png)
 
 Sample data used in JSON format
 
@@ -278,4 +277,24 @@ db.applicants.find({
   gender: "Female",
   disabilityStatus: { $ne: "none" }
 })
+
+Group Contribution Summary
+Name: Samuel Shadiva Tokoye
+Student ID: 222072
+Responsibilities:
+•	MongoDB setup
+•	Scenario design
+
+
+Name: Elizabeth [COMPLETE THE NAME]
+Student ID: [INSERT_STUDENT_ID]
+Responsibilities:
+•	CRUD implementation
+•	Screenshots and visuals
+
+Name: Catherine [COMPLETE THE NAME]
+Student ID: [INSERT_STUDENT_ID]
+Responsibilities:
+•	Markdown lab documentation
+
 
