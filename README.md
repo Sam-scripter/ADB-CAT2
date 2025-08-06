@@ -19,8 +19,9 @@ Installing steps
 
  ![screenshot](Lab_screenshot_3.png)
 
-Screenshots
- Missed – install as a service, install compass, finish
+Service Configuration
+gggggggggggggggggggggg
+ 
 
 
 Launch MongoDB compass, select add new connection
