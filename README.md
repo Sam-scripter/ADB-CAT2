@@ -4,7 +4,7 @@ Database software to use: MongoDB
 Setup instructions
 Install on windows 11 operating system
 MongoDB version 8.0.12
-Download from this link: Install MongoDB Community Kubernetes Operator | MongoDB
+Download from this link: https://www.mongodb.com/try/download/community
 
 Installing steps
 -	Double click the installer to initiate the installation process
@@ -264,7 +264,7 @@ a) To return a list of all applicants who have met certain criterias for shortli
 SELECT * FROM applicants <br>
 LEFT JOIN academic_qualifications ON applicants.id = academic_qualifications.applicant_id <br> 
 LEFT JOIN professional_qualifications ON applicants.id = professional_qualifications.applicant_id  <br>
-LEFT JOIN membership_bodies ON applicants.id = membership_bodies.applicant_id where applicants.id <br>
+LEFT JOIN membership_bodies ON applicants.id = membership_bodies.applicant_id <br>
 WHERE  professional_qualifications IN('CCNA', 'CISM') AND membership_bodies IN('IEEE', 'ISACA'); <br>
 
 b) To retrieve an applicant profile, joins of all required tables is performed as shown below:-<br>
