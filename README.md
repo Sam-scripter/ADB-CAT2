@@ -1,6 +1,6 @@
-Data model option: - document store
+<h1>Data model option: - document store</h1>
 Database software to use: MongoDB
-QUESTION 1: SETUP
+<h3>QUESTION 1: SETUP</h3>
 Setup instructions
 Install on windows 11 operating system
 MongoDB version 8.0.12
@@ -40,7 +40,7 @@ Uri: mongodb://localhost:27017
 Name: mongoDBAssignment
 Save&Connect
 
-QUESTION 2: BASIC OPERATIONS
+<h3>QUESTION 2: BASIC OPERATIONS</h3>
 
 Create database
 We will use mongoDB shell (mongosh) to demonstrate CRUD
@@ -357,7 +357,7 @@ b) To retrieve an entire applicant profile during interview without table joinin
 
 db.applicants.findOne({ applicant_id: "112" })<br>
 
-GROUP CONTRIBUTION SUMMARY:<br>
+<h3>GROUP CONTRIBUTION SUMMARY:</h3><br>
 Name: Samuel Shadiva Tokoye<br>
 Student ID: 222072<br>
 Responsibilities:<br>
