@@ -253,11 +253,32 @@ Sample data used in JSON format
 ]<br><br>
 QUESTION 3: APPLIED SCENARIO<br>
 Public Service Commission normally collects thousands of applicants records for the purposes of recruiting persons to serve in the public organizations. A portal is used to collect this data. Applicants’ profiles are normally varied in a way depending on the job descriptions. The profiles are build based on: personal information,academic qualifications, professional qualifications, work experiences, membership to professional bodies,jobs applied, status of the applications among others.<br> <br>
-how the database can be used to model this problem. <br>
-MongoDB’s document model can allow for clean and nested representation of this data within a single applicant record without normalization. <br>
-For instance, the sample applicant data below demonstrates how the MongoDB database can model this problem. We can have applicants with different profiles, for instance applicant 103 and applicant 112 have totally different profiles, their additional data are nested under their profiles and more data like interview dates can also be added<br>
-applicant 103
 
+<h3>Problem</h3><br>
+
+Retrieval of applicants records using table joins is very slow especially when it comes to working with large datasets that requires data from multiple tables.<br>
+This happens during shortlisting and interviews. During shortlisting only applicants that meet certain criterias are retrived. And during interviews complete applicant profiles are needed. For example:-<br>
+
+a) To return a list of all applicants who have met certain criterias for shortlisting purposes table joins are used as shown below.
+
+SELECT * FROM applicants <br>
+LEFT JOIN academic_qualifications ON applicants.id = academic_qualifications.applicant_id <br> 
+LEFT JOIN professional_qualifications ON applicants.id = professional_qualifications.applicant_id  <br>
+LEFT JOIN membership_bodies ON applicants.id = membership_bodies.applicant_id where applicants.id <br>
+WHERE  professional_qualifications IN('CCNA', 'CISM') AND membership_bodies IN('IEEE', 'ISACA'); <br>
+
+b) To retrieve an applicant profile, joins of all required tables is performed as shown below:-<br>
+
+SELECT * FROM applicants  <br>
+LEFT JOIN academic_qualifications ON applicants.id = academic_qualifications.applicant_id  <br>
+LEFT JOIN professional_qualifications ON applicants.id = professional_qualifications.applicant_id  <br>
+LEFT JOIN membership_bodies ON applicants.id = membership_bodies.applicant_id where applicants.id = 112; br>
+
+(ii) how the database can be used to model this problem.
+MongoDB’s document model can allow for clean and nested representation of this data within a single applicant record without normalization. 
+For instance, the sample applicant data below demonstrates how the MongoDB database can model this problem. We can have applicants with different profiles, for instance applicant 103 and applicant 112 have totally different profiles, their additional data are nested under their profiles. This data can be retrieved using the queries below without performing any joins thus improving query performance.
+
+applicant 103
 <br>
 {<br>
   "applicantId": 103,
@@ -321,6 +342,20 @@ applicant 112<br>
   ]
 }<br>
 
+<h3>How the model resolves the problem of table joins</h3>
+
+a) To return a list of all applicants who have met certain criterias for shortlisting purposes, the following query is used without performing complex table joins<br>
+
+db.applicants.find({<br>
+  "professionalCertifications.name": { $in: ["CCNA", "CISM"] },<br>
+  "membership_bodies.organization": { $in: ["IEEE", "ISACA"] }<br>
+})<br>
+
+
+b) To retrieve an entire applicant profile during interview without table joining only one query is used as shown below for the case of applicant 112. <br>
+
+
+db.applicants.findOne({ applicant_id: "112" })<br>
 
 GROUP CONTRIBUTION SUMMARY:<br>
 Name: Samuel Shadiva Tokoye<br>
