@@ -52,15 +52,13 @@ You have successfully installed MondoDB server, you can now interact with it is 
 
 <h3>QUESTION 2: BASIC OPERATIONS</h3>
 
-<h4>Create database</h4><br>
-We will use mongoDB shell (mongosh) to demonstrate CRUD<br>
-The database instance in this case is that of a Recruitment system where applicants will be the collection and each applicant record stored as a document. Each applicant record will include the following:<br>
-applicantId (Number)<br>
-name (String)<br>
-gender (String)<br>
-position (String)<br>
-score (Number)<br>
-status (String: "pending", "shortlisted", "rejected")<br>
+A sample recruitment system database will be used to demonstrate the Create, Read, Update and Delete (CRUD) operations of a document store database. The interaction with the database will be via the mongoDB shell (mongosh). In this database, applicants will be stored as collections and applicant records will be stored as documents.Each applicant document will include:
+applicantId (Number)
+name (String)
+gender (String)
+position (String)
+score (Number)
+status (String: "pending", "shortlisted", "rejected")<br>
 
 **STEPS**
 
