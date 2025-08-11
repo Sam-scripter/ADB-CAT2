@@ -1,27 +1,29 @@
 <h1>Data model option: - document store</h1>
-Database software to use: MongoDB
-This lab provides a practical introduction to the Document Store data model, one of the most widely used approaches in the NoSQL database family. Using MongoDB, you will install, configure, and interact with a document store environment from scratch.
-In approximately 30–60 minutes, you will:
--Set up a MongoDB instance a direct local installation.
--Perform essential CRUD (Create, Read, Update, Delete) operations.
--Apply your skills to a realistic recruitment system scenario, demonstrating why document stores are ideal for flexible and evolving data structures.
+
+Database software to use: MongoDB <br>
+This lab provides a practical introduction to the Document Store data model, one of the most widely used approaches in the NoSQL database family. Using MongoDB, you will install, configure, and interact with a document store environment from scratch.<br>
+In approximately 30–60 minutes, you will:<br>
+-Set up a MongoDB instance a direct local installation.<br>
+-Perform essential CRUD (Create, Read, Update, Delete) operations.<br>
+-Apply your skills to a realistic recruitment system scenario, demonstrating why document stores are ideal for flexible and evolving data structures.<br>
+
 
 <h3>QUESTION 1: SETUP</h3>
-Setup instructions
-Install on windows 11 operating system
+Setup instructions<br>
+Install on windows 11 Operating System<br>
 MongoDB version 8.0.12
-Download from this link: https://www.mongodb.com/try/download/community
+Download from this link: https://www.mongodb.com/try/download/community<br>
 
-Installing steps
+Installation steps<br>
 -	Double click the installer to initiate the installation process
 
  ![screenshot](Lab_screenshot_1.jpg)
 
--	Click next and accept the terms of agreement
+-	Click **Next** and accept the End-User License Agreement
 
  ![screenshot](Lab_screenshot_2.png)
 
--	Click Next and then select Complete to install the complete package
+-	Click **Next** and then select Complete to install the complete package
 
  ![screenshot](Lab_screenshot_3.png)
 
@@ -42,51 +44,51 @@ Launch MongoDB compass, select add new connection
  ![screenshot](Lab_screenshot_4.png)
 
 Specify the following parameters in the window that appears
-Uri: mongodb://localhost:27017
-Name: mongoDBAssignment
-Save&Connect
+Uri: **mongodb://localhost:27017**<br>
+Name: **mongoDBAssignment**<br>
+**Save&Connect**<br>
+
+You have successfully installed MondoDB server, you can now interact with it is by performiing(Create, Read, Update, Delete) operations.<br>
 
 <h3>QUESTION 2: BASIC OPERATIONS</h3>
 
 Create database
-We will use mongoDB shell (mongosh) to demonstrate CRUD
-In the Context of a Recruitment System, we will use recruitmentDB as our database, applicants as the collection and each applicant record as a document, each applicant document will include:
-applicantId (Number)
-name (String)
-gender (String)
-position (String)
-score (Number)
-status (String: "pending", "shortlisted", "rejected")
+We will use mongoDB shell (mongosh) to demonstrate CRUD<br>
+The database instance in this case is that of a Recruitment system where applicants will be the collection and each applicant record stored as a document. Each applicant record will include the following:<br>
+applicantId (Number)<br>
+name (String)<br>
+gender (String)<br>
+position (String)<br>
+score (Number)<br>
+status (String: "pending", "shortlisted", "rejected")<br>
 
-STEPS
+**STEPS**
 
-1.	create recruitmentDB database
+1.	Create recruitmentDB database
           
-command
+Use this command: **use recruitmentDB**
 
-use recruitmentDB
-
-expected output
+Expected output
  
  ![screenshot](Lab_screenshot_5.png)
 
-2. CREATE: add sample documents to our recruitment database
+2. **CREATE**: We implement this operation to add sample documents to our recruitment database
 
-a.	command to add a document to applicants’ collection
-db.applicants.insertOne({
-  applicantId: 111,
-  name: "Janet Chebet",
-  gender: "Female",
-  position: "Procurement Officer",
-  score: 87,
-  status: "pending"
-})
+a.	Command to add a document to applicants’ collection<br>
+db.applicants.insertOne({<br>
+  applicantId: 111,<br>
+  name: "Janet Chebet",<br>
+  gender: "Female",<br>
+  position: "Procurement Officer",<br>
+  score: 87,<br>
+  status: "pending"<br>
+})<br>
 
 Sample Output
 
  ![screenshot](Lab_screenshot_6.png)
 
-b.	insert many records(add many documents to applicants collection)
+b.	Insert many records(add many documents to applicants collection)
 
 db.applicants.insertMany([
   { applicantId: 101, name: "Grace Wanjiku", gender: "Female", position: "ICT Officer", score: 82, status: "pending" },<br>
@@ -107,7 +109,7 @@ Output
  ![screenshot](Lab_screenshot_7.png)
 
 
-2. READ: Query applicants
+2. **READ**: We implement this operation to query applicants
 
 a. To retrieve all applicants use the following command
                  db.applicants.find()
@@ -117,41 +119,41 @@ Sample output
 ![screenshot](Lab_screenshot_8.png)
  
 
-b. use the following command to get all applicants who applied for the Clerk position
+b. Use the following command to get all applicants who applied for the Clerk position
      db.applicants.find({ position: "Clerk" })
 
-sample output
+Sample output
 
  ![screenshot](Lab_screenshot_9.png)
 
 c. To get all applicants with scores above 90, use the following command
      db.applicants.find({ score: { $gte: 90 } })
-    Sample output
-   ![screenshot](Lab_screenshot_10.png)
+Sample output
+![screenshot](Lab_screenshot_10.png)
 
-3. UPDATE: Modify Applicants Records
-a. to shortlist applicant with a score of more than 80 use the following command
-db.applicants.updateMany(
-  { score: { $gte: 80 } },
-  { $set: { status: "shortlisted" } }
-)
+3.**UPDATE:** Modify Applicants Records<br>
+a. To shortlist applicant with a score of more than 80 use the following command<br>
+db.applicants.updateMany(<br>
+  { score: { $gte: 80 } },<br>
+  { $set: { status: "shortlisted" } }<br>
+)<br>
 
 Output is as follows
 
 ![screenshot](Lab_screenshot_11.png)
  
-b. to update applicant name by ID use the following command
-db.applicants.updateOne(
-  { applicantId: 102 },
-  { $set: { name: "James O. Otieno" } }
-)
+b. To update applicant name by ID use the following command<br>
+db.applicants.updateOne(<br>
+  { applicantId: 102 },<br>
+  { $set: { name: "James O. Otieno" } }<br>
+)<br>
 Output is as follows
 
- ![screenshot](Lab_screenshot_12.png)
+![screenshot](Lab_screenshot_12.png)
 
-4. DELETE:- remove applicant records
+4. **DELETE:** remove applicant records<br>
 
-a.	Delete an applicant   by id
+a.	Delete an applicant   by id<br>
 
 ![screenshot](Lab_screenshot_13.png)
 
@@ -257,7 +259,8 @@ Sample data used in JSON format
     "status": "pending"
   }<br>
 ]<br><br>
-QUESTION 3: APPLIED SCENARIO<br>
+
+**<h3>QUESTION 3: APPLIED SCENARIO</h3><br>**
 Public Service Commission normally collects thousands of applicants records for the purposes of recruiting persons to serve in the public organizations. A portal is used to collect this data. Applicants’ profiles are normally varied in a way depending on the job descriptions. The profiles are build based on: personal information,academic qualifications, professional qualifications, work experiences, membership to professional bodies,jobs applied, status of the applications among others.<br> <br>
 
 <h3>Problem</h3><br>
@@ -280,7 +283,7 @@ LEFT JOIN academic_qualifications ON applicants.id = academic_qualifications.app
 LEFT JOIN professional_qualifications ON applicants.id = professional_qualifications.applicant_id  <br>
 LEFT JOIN membership_bodies ON applicants.id = membership_bodies.applicant_id where applicants.id = 112; br>
 
-(ii) how the database can be used to model this problem.
+c) How the database can be used to model this problem.<br>
 MongoDB’s document model can allow for clean and nested representation of this data within a single applicant record without normalization. 
 For instance, the sample applicant data below demonstrates how the MongoDB database can model this problem. We can have applicants with different profiles, for instance applicant 103 and applicant 112 have totally different profiles, their additional data are nested under their profiles. This data can be retrieved using the queries below without performing any joins thus improving query performance.
 
@@ -364,21 +367,21 @@ b) To retrieve an entire applicant profile during interview without table joinin
 db.applicants.findOne({ applicant_id: "112" })<br>
 
 <h3>GROUP CONTRIBUTION SUMMARY:</h3><br>
-Name: Samuel Shadiva Tokoye<br>
+
+**Name: Samuel Shadiva Tokoye**<br>
 Student ID: 222072<br>
 Responsibilities:<br>
 •	MongoDB setup<br>
 •	Scenario design<br><br>
 
-
-Name: Elizabeth Sikuku<br>
+**Name: Elizabeth Sikuku**<br>
 Student ID: 096039<br>
 Responsibilities:<br>
 •	CRUD implementation<br>
 •	Screenshots and visuals<br>
 
-Name: Catherine [COMPLETE THE NAME]<br>
-Student ID: [INSERT_STUDENT_ID]<br>
+**Name: Catherine Anyango**<br>
+Student ID: 223933<br>
 Responsibilities:<br>
 •	Markdown lab documentation
 
