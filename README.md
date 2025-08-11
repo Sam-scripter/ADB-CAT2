@@ -52,7 +52,7 @@ You have successfully installed MondoDB server, you can now interact with it is 
 
 <h3>QUESTION 2: BASIC OPERATIONS</h3>
 
-Create database
+<h4>Create database</h4><br>
 We will use mongoDB shell (mongosh) to demonstrate CRUD<br>
 The database instance in this case is that of a Recruitment system where applicants will be the collection and each applicant record stored as a document. Each applicant record will include the following:<br>
 applicantId (Number)<br>
