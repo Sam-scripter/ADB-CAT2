@@ -48,7 +48,7 @@ Uri: **mongodb://localhost:27017**<br>
 Name: **mongoDBAssignment**<br>
 **Save&Connect**<br>
 
-You have successfully installed MondoDB server, you can now interact with it is by performiing(Create, Read, Update, Delete) operations.<br>
+You have successfully installed MondoDB server, you can now interact with it is by performing CRUD (Create, Read, Update, Delete) operations.<br>
 
 <h3>QUESTION 2: BASIC OPERATIONS</h3>
 
