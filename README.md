@@ -41,10 +41,7 @@ Name: mongoDBAssignment
 Save&Connect
 
 <h3>QUESTION 2: BASIC OPERATIONS</h3>
-
-Create database
-We will use mongoDB shell (mongosh) to demonstrate CRUD
-In the Context of a Recruitment System, we will use recruitmentDB as our database, applicants as the collection and each applicant record as a document, each applicant document will include:
+A sample recruitment system database will be used to demonstrate the Create, Read, Update and Delete (CRUD) operations of a document store database. The interaction with the database will be via the mongoDB shell (mongosh). In this database, applicants will be stored as collections and applicant records will be stored as documents.Each applicant document will include:
 applicantId (Number)
 name (String)
 gender (String)
