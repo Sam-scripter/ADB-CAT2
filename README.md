@@ -1,5 +1,11 @@
 <h1>Data model option: - document store</h1>
 Database software to use: MongoDB
+This lab provides a practical introduction to the Document Store data model, one of the most widely used approaches in the NoSQL database family. Using MongoDB, you will install, configure, and interact with a document store environment from scratch.
+In approximately 30–60 minutes, you will:
+-Set up a MongoDB instance a direct local installation.
+-Perform essential CRUD (Create, Read, Update, Delete) operations.
+-Apply your skills to a realistic recruitment system scenario, demonstrating why document stores are ideal for flexible and evolving data structures.
+
 <h3>QUESTION 1: SETUP</h3>
 Setup instructions
 Install on windows 11 operating system
